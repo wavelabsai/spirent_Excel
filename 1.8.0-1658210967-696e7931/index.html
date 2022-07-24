@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<title></title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<style>
+table, th, td {
+border:1px solid black;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    border-color: grey;
+    font-variant: normal;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+ tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+</style>
+<body>
+<script type="text/javascript">
+$(function() {
+var cell = $('td');
+cell.each(function() {
+var cell_value = $(this).html();
+if(cell_value == 'PASS') $(this).css({
+'background': 'green'
+});
+if(cell_value == 'FAIL') $(this).css({
+'background': 'red'
+});
+});
+});
+</script>
+<form id="form1" runat="server">
+<h2>Wavelabs 5G SI test result report.</h2>
+<h3>Magma build : 1.8.0-1658210967-696e7931</h3>
+<h3>Test Sut logs :</h3>
+<p><a href="https://raw.githubusercontent.com/wavelabsai/firebaseagentreport/master/syslog-1.8.0-1658210967-696e7931" target="_blank">Sys Log</a></p>
+<p><a href="https://raw.githubusercontent.com/wavelabsai/firebaseagentreport/master/mme-1.8.0-1658210967-696e7931.log" target="_blank">MME Log</a></p>
+<table style="width:100%">
+<tr>
+<th rowspan = "2">TC ID</th>
+<th rowspan = "2">Test Case Name</th>
+<th rowspan = "2">RID</th>
+<th rowspan = "2">Test Run Result</th>
+</tr>
+<tr></tr>
+
+<tr>
+<td>TC02</td>
+<td>SUCI_REG_PDU_Traffic_Scaling_UE</td>
+<td>719</td>
+<td>PASSED</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
